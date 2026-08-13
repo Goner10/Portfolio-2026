@@ -21,6 +21,7 @@ Premium personal portfolio website for Spanish web developer Gonzalo Martí Peir
 - Motion: framer-motion entrance + whileInView reveals, subtle hero parallax, prefers-reduced-motion respected
 
 ## Implemented (June 2026)
+- [x] Barra de progreso de lectura: hairline 2px fija arriba (degradado arena→azul), scroll-linked con spring suave, sin spring si prefers-reduced-motion (ScrollProgress.jsx)
 - [x] Case modal por proyecto (galería con capturas extra: carta/contacto/tablet/móvil), abre por botón o clic en el visual; Esc/overlay/botón cierran; focus trap + scroll lock; bilingüe
 - [x] sitemap.xml + robots.txt generados desde VITE_SITE_URL (plugin en vite.config.js, servidos en dev y emitidos en build); build falla si VITE_SITE_URL no está definida
 - [x] Logo "G." animado: firma SVG que se dibuja al cargar (stroke-dashoffset), respeta prefers-reduced-motion
@@ -37,5 +38,4 @@ Premium personal portfolio website for Spanish web developer Gonzalo Martí Peir
 - [x] Testing agent iteration_1: 100% pass, no issues
 
 ## Backlog / next
-- P2: Light scroll-progress or section transitions polish
 - P2: Deployment (static build) — recordar cambiar VITE_SITE_URL al dominio final (og:url, canonical, sitemap y robots se actualizan solos)

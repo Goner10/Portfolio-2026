@@ -1,3 +1,16 @@
+/* ============ SCROLL PROGRESS ============ */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 110;
+  background: linear-gradient(90deg, var(--sand), var(--blue));
+  transform-origin: 0 50%;
+  pointer-events: none;
+}
+
 /* ============ NAV ============ */
 .nav {
   position: fixed;

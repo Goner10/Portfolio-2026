@@ -1,4 +1,5 @@
 import { LanguageProvider } from './i18n/LanguageContext.jsx';
+import ScrollProgress from './components/ScrollProgress.jsx';
 import Navbar from './components/Navbar.jsx';
 import Hero from './sections/Hero.jsx';
 import About from './sections/About.jsx';
@@ -12,6 +13,7 @@ import Footer from './components/Footer.jsx';
 export default function App() {
   return (
     <LanguageProvider>
+      <ScrollProgress />
       <Navbar />
       <main>
         <Hero />
