@@ -10,6 +10,12 @@ export const projects = [
     phone: '/assets/projects/glops-i-llandes/movil-glops-removebg-preview.png',
     tech: ['HTML', 'CSS', 'JavaScript'],
     accent: '#57756D',
+    gallery: [
+      { src: '/assets/projects/glops-i-llandes/carta-glops.jpg', type: 'desktop', label: { es: 'La carta', en: 'The menu' } },
+      { src: '/assets/projects/glops-i-llandes/contacto-glops.jpg', type: 'desktop', label: { es: 'Contacto y reservas', en: 'Contact & bookings' } },
+      { src: '/assets/projects/glops-i-llandes/tablet-glops.png', type: 'device', label: { es: 'Vista tablet', en: 'Tablet view' } },
+      { src: '/assets/projects/glops-i-llandes/movil-glops2-removebg-preview.png', type: 'device', label: { es: 'Vista móvil', en: 'Mobile view' } },
+    ],
     clientType: { es: 'Cliente comercial · Bar de tapas', en: 'Commercial client · Tapas bar' },
     need: {
       es: 'Necesitaban una web para su nuevo local: presentar el espacio, la carta y facilitar la reserva.',
@@ -31,6 +37,12 @@ export const projects = [
     phone: '/assets/projects/divina-comedia/movil-divina-comedia-removebg-preview.png',
     tech: ['HTML', 'CSS', 'JavaScript'],
     accent: '#C8A96E',
+    gallery: [
+      { src: '/assets/projects/divina-comedia/carta-divina-comedia.jpg', type: 'desktop', label: { es: 'La carta', en: 'The menu' } },
+      { src: '/assets/projects/divina-comedia/movil-divina-comedia-2-removebg-preview.png', type: 'device', label: { es: 'Vista móvil', en: 'Mobile view' } },
+      { src: '/assets/projects/divina-comedia/movil-divina-comedia-3-removebg-preview.png', type: 'device', label: { es: 'Vista móvil', en: 'Mobile view' } },
+      { src: '/assets/projects/divina-comedia/movil-d-comedia-4-removebg-preview.png', type: 'device', label: { es: 'Vista móvil', en: 'Mobile view' } },
+    ],
     clientType: { es: 'Cliente comercial · Restaurante', en: 'Commercial client · Restaurant' },
     need: {
       es: 'Querían una web nueva: el restaurante llevaba muchos años abierto y no tenía una presencia web a la altura.',
@@ -52,6 +64,11 @@ export const projects = [
     phone: '/assets/projects/seguros-redondo/movil-seguros-redondo-removebg-preview.png',
     tech: ['React', 'JavaScript', 'Tailwind'],
     accent: '#2F4C63',
+    gallery: [
+      { src: '/assets/projects/seguros-redondo/aseguros-reedondo.jpg', type: 'desktop', label: { es: 'Sobre la correduría', en: 'About the brokerage' } },
+      { src: '/assets/projects/seguros-redondo/tablet-seguros-redondo.png', type: 'device', label: { es: 'Vista tablet', en: 'Tablet view' } },
+      { src: '/assets/projects/seguros-redondo/movil-seguros-redondo-2-removebg-preview.png', type: 'device', label: { es: 'Vista móvil', en: 'Mobile view' } },
+    ],
     clientType: { es: 'Cliente comercial · Correduría de seguros', en: 'Commercial client · Insurance brokerage' },
     need: {
       es: 'Necesitaban una web nueva: la anterior había sido comprometida y tenía páginas no deseadas indexadas en buscadores.',
@@ -73,6 +90,12 @@ export const projects = [
     phone: '/assets/projects/sani-tattoo/movil-home-sanitattoo-removebg-preview.png',
     tech: ['React', 'Tailwind', 'ESLint'],
     accent: '#8A3B3B',
+    gallery: [
+      { src: '/assets/projects/sani-tattoo/catalogo-sanitattoo.jpg', type: 'desktop', label: { es: 'Catálogo de producto', en: 'Product catalogue' } },
+      { src: '/assets/projects/sani-tattoo/carrusel-sanitattoo.jpg', type: 'desktop', label: { es: 'Carrusel de marcas', en: 'Brand carousel' } },
+      { src: '/assets/projects/sani-tattoo/tablet-sani-tattoo.png', type: 'device', label: { es: 'Vista tablet', en: 'Tablet view' } },
+      { src: '/assets/projects/sani-tattoo/movil-sanitattoo-removebg-preview.png', type: 'device', label: { es: 'Vista móvil', en: 'Mobile view' } },
+    ],
     clientType: { es: 'Cliente comercial · Material sanitario para tatuaje', en: 'Commercial client · Tattoo sanitary supplies' },
     need: {
       es: 'Crear la web de una marca de material sanitario para tatuaje, preparada para evolucionar a tienda online en el futuro.',

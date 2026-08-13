@@ -49,6 +49,9 @@ export const translations = {
       repo: 'Código',
       year: 'Año',
       client: 'Cliente',
+      viewCase: 'Ver caso completo',
+      close: 'Cerrar',
+      gallery: 'Más vistas del proyecto',
     },
     skills: {
       eyebrow: 'Capacidades',
@@ -158,6 +161,9 @@ export const translations = {
       repo: 'Code',
       year: 'Year',
       client: 'Client',
+      viewCase: 'View full case',
+      close: 'Close',
+      gallery: 'More project views',
     },
     skills: {
       eyebrow: 'Capabilities',

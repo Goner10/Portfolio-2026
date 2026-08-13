@@ -32,12 +32,36 @@
   gap: 10px;
 }
 
-.nav__brand-mark {
+.nav__brand-svg { overflow: visible; }
+
+.nav__brand-g {
   font-family: var(--font-display);
   font-style: italic;
-  font-size: 26px;
+  font-size: 30px;
   font-weight: 500;
-  line-height: 1;
+  fill: transparent;
+  stroke: var(--ink);
+  stroke-width: 0.9;
+  stroke-linecap: round;
+  stroke-dasharray: 420;
+  stroke-dashoffset: 420;
+  animation: draw-g 1.7s var(--ease) 0.2s forwards, fill-g 0.7s ease 1.5s forwards;
+}
+
+@keyframes draw-g {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes fill-g {
+  to { fill: var(--ink); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav__brand-g {
+    animation: none;
+    fill: var(--ink);
+    stroke-dashoffset: 0;
+  }
 }
 
 .nav__brand-name {
@@ -625,8 +649,152 @@
 
 .case__links {
   display: flex;
+  align-items: center;
   gap: 12px;
   flex-wrap: wrap;
+}
+
+.case__visual-btn {
+  display: block;
+  width: 100%;
+  text-align: inherit;
+  cursor: pointer;
+  position: relative;
+}
+
+.case__more {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  border-bottom: 1px solid var(--line);
+  padding: 4px 2px;
+  transition: color 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+
+.case__more:hover { color: var(--ink); border-color: var(--ink); }
+
+/* ============ CASE MODAL ============ */
+.casemodal__overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(27, 25, 22, 0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(12px, 3vw, 40px);
+}
+
+.casemodal {
+  background: var(--ivory);
+  border-radius: 18px;
+  width: min(1060px, 100%);
+  max-height: 92vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.35);
+}
+
+.casemodal__head {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: clamp(24px, 3vw, 40px) clamp(24px, 4vw, 56px) 20px;
+  background: rgba(247, 243, 236, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.casemodal__name {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3vw, 40px);
+  font-weight: 420;
+  line-height: 1.05;
+}
+
+.casemodal__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  transition: background-color 0.3s var(--ease), color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.casemodal__close:hover {
+  background: var(--ink);
+  color: var(--ivory);
+  transform: rotate(90deg);
+}
+
+.casemodal__body {
+  padding: 28px clamp(24px, 4vw, 56px) clamp(32px, 4vw, 56px);
+}
+
+.casemodal__cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(20px, 3vw, 48px);
+}
+
+.casemodal__gallery-title {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 40px 0 20px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.casemodal__gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.casemodal__item--desktop { grid-column: 1 / -1; }
+
+.casemodal__item figcaption {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--ink-faint);
+  margin-top: 10px;
+}
+
+.casemodal__device {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ivory-2);
+  border: 1px solid var(--line-soft);
+  border-radius: 12px;
+  padding: 26px;
+  min-height: 260px;
+}
+
+.casemodal__device img {
+  max-height: 340px;
+  width: auto;
+  max-width: 100%;
+  filter: drop-shadow(0 16px 32px rgba(34, 32, 28, 0.2));
 }
 
 /* ============ SKILLS ============ */
@@ -1074,6 +1242,8 @@
   .hero__location { display: none; }
   .case__phone { bottom: -24px; right: -6px; }
   .case--reversed .case__phone { left: -6px; }
+  .casemodal__cols { grid-template-columns: 1fr; }
+  .casemodal__gallery { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 520px) {

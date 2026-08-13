@@ -21,6 +21,9 @@ Premium personal portfolio website for Spanish web developer Gonzalo Martí Peir
 - Motion: framer-motion entrance + whileInView reveals, subtle hero parallax, prefers-reduced-motion respected
 
 ## Implemented (June 2026)
+- [x] Case modal por proyecto (galería con capturas extra: carta/contacto/tablet/móvil), abre por botón o clic en el visual; Esc/overlay/botón cierran; focus trap + scroll lock; bilingüe
+- [x] sitemap.xml + robots.txt generados desde VITE_SITE_URL (plugin en vite.config.js, servidos en dev y emitidos en build); build falla si VITE_SITE_URL no está definida
+- [x] Logo "G." animado: firma SVG que se dibuja al cargar (stroke-dashoffset), respeta prefers-reduced-motion
 - [x] Social preview / Open Graph (June 2026): og:* + twitter:card summary_large_image en index.html, imagen 1200x630 a medida en /assets/social/og-image.jpg (identidad editorial: marfil, Fraunces, azul, retrato sobre círculo). URL base configurable vía VITE_SITE_URL en frontend/.env — ACTUALIZAR al dominio de producción final.
 - [x] Hero: editorial split — giant serif name (italic blue second line), role, tagline, 3 CTAs, portrait over sage circle w/ parallax, availability badge, socials + coords strip
 - [x] About: lead paragraph, facts list (dl), "Lo que aporto" 3-card grid
@@ -34,7 +37,5 @@ Premium personal portfolio website for Spanish web developer Gonzalo Martí Peir
 - [x] Testing agent iteration_1: 100% pass, no issues
 
 ## Backlog / next
-- P1: Project detail modal/pages using remaining screenshots (carta, contacto, tablet shots per project)
-- P2: Sitemap, favicon refinement
 - P2: Light scroll-progress or section transitions polish
-- P2: Deployment (static build) — recordar cambiar VITE_SITE_URL al dominio final
+- P2: Deployment (static build) — recordar cambiar VITE_SITE_URL al dominio final (og:url, canonical, sitemap y robots se actualizan solos)

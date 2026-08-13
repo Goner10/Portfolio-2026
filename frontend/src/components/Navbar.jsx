@@ -31,7 +31,9 @@ export default function Navbar() {
     >
       <div className="nav__inner">
         <a href="#top" className="nav__brand" data-testid="nav-brand">
-          <span className="nav__brand-mark">G.</span>
+          <svg className="nav__brand-svg" viewBox="0 0 44 40" width="34" height="31" aria-hidden="true">
+            <text x="2" y="31" className="nav__brand-g">G.</text>
+          </svg>
           <span className="nav__brand-name">Gonzalo Martí</span>
         </a>
 

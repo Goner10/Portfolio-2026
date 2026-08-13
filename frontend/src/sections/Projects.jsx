@@ -1,9 +1,12 @@
-import { ArrowUpRight, Github } from 'lucide-react';
+import { useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
+import { ArrowUpRight, Github, Plus } from 'lucide-react';
 import Reveal from '../components/Reveal.jsx';
+import CaseModal from '../components/CaseModal.jsx';
 import { useLang } from '../i18n/LanguageContext.jsx';
 import { projects } from '../data/projects.js';
 
-function ProjectCase({ project, index }) {
+function ProjectCase({ project, index, onOpen }) {
   const { lang, t } = useLang();
   const reversed = index % 2 === 1;
 
@@ -14,26 +17,33 @@ function ProjectCase({ project, index }) {
       style={{ '--case-accent': project.accent }}
     >
       <Reveal className="case__visual" y={40}>
-        <div className="browser">
-          <div className="browser__bar" aria-hidden="true">
-            <span className="browser__dots">
-              <i></i><i></i><i></i>
-            </span>
-            <span className="browser__url">{project.domain}</span>
+        <button
+          className="case__visual-btn"
+          onClick={() => onOpen(project)}
+          aria-label={`${t('projects.viewCase')} — ${project.name}`}
+          data-testid={`project-open-${project.id}`}
+        >
+          <div className="browser">
+            <div className="browser__bar" aria-hidden="true">
+              <span className="browser__dots">
+                <i></i><i></i><i></i>
+              </span>
+              <span className="browser__url">{project.domain}</span>
+            </div>
+            <img
+              src={project.desktop}
+              alt={`${project.name} — desktop`}
+              loading={index === 0 ? 'eager' : 'lazy'}
+              className="browser__shot"
+            />
           </div>
           <img
-            src={project.desktop}
-            alt={`${project.name} — desktop`}
-            loading={index === 0 ? 'eager' : 'lazy'}
-            className="browser__shot"
+            src={project.phone}
+            alt={`${project.name} — mobile`}
+            loading="lazy"
+            className="case__phone"
           />
-        </div>
-        <img
-          src={project.phone}
-          alt={`${project.name} — mobile`}
-          loading="lazy"
-          className="case__phone"
-        />
+        </button>
         <span className="case__index" aria-hidden="true">0{index + 1}</span>
       </Reveal>
 
@@ -84,6 +94,14 @@ function ProjectCase({ project, index }) {
               <Github size={15} strokeWidth={1.8} />
               {t('projects.repo')}
             </a>
+            <button
+              className="case__more"
+              onClick={() => onOpen(project)}
+              data-testid={`project-viewcase-${project.id}`}
+            >
+              <Plus size={14} strokeWidth={1.8} />
+              {t('projects.viewCase')}
+            </button>
           </div>
         </Reveal>
       </div>
@@ -93,6 +111,7 @@ function ProjectCase({ project, index }) {
 
 export default function Projects() {
   const { t } = useLang();
+  const [active, setActive] = useState(null);
 
   return (
     <section className="section projects" id="proyectos" data-testid="projects-section">
@@ -105,10 +124,14 @@ export default function Projects() {
 
         <div className="projects__list">
           {projects.map((project, i) => (
-            <ProjectCase key={project.id} project={project} index={i} />
+            <ProjectCase key={project.id} project={project} index={i} onOpen={setActive} />
           ))}
         </div>
       </div>
+
+      <AnimatePresence>
+        {active && <CaseModal project={active} onClose={() => setActive(null)} />}
+      </AnimatePresence>
     </section>
   );
 }
