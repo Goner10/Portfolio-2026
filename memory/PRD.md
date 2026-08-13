@@ -21,6 +21,7 @@ Premium personal portfolio website for Spanish web developer Gonzalo Martí Peir
 - Motion: framer-motion entrance + whileInView reveals, subtle hero parallax, prefers-reduced-motion respected
 
 ## Implemented (June 2026)
+- [x] Social preview / Open Graph (June 2026): og:* + twitter:card summary_large_image en index.html, imagen 1200x630 a medida en /assets/social/og-image.jpg (identidad editorial: marfil, Fraunces, azul, retrato sobre círculo). URL base configurable vía VITE_SITE_URL en frontend/.env — ACTUALIZAR al dominio de producción final.
 - [x] Hero: editorial split — giant serif name (italic blue second line), role, tagline, 3 CTAs, portrait over sage circle w/ parallax, availability badge, socials + coords strip
 - [x] About: lead paragraph, facts list (dl), "Lo que aporto" 3-card grid
 - [x] Projects: 4 alternating art-directed cases (browser frame + floating phone mockup + outlined index numeral), brief/solution, tech chips, visit + repo links (all 4 real clients: Glops i Llandes 2024, La Divina Comedia 2025, Seguros Redondo 2026, SaniTattoo 2026)
@@ -34,6 +35,6 @@ Premium personal portfolio website for Spanish web developer Gonzalo Martí Peir
 
 ## Backlog / next
 - P1: Project detail modal/pages using remaining screenshots (carta, contacto, tablet shots per project)
-- P2: OG/social meta images, sitemap, favicon refinement
+- P2: Sitemap, favicon refinement
 - P2: Light scroll-progress or section transitions polish
-- P2: Deployment (static build)
+- P2: Deployment (static build) — recordar cambiar VITE_SITE_URL al dominio final
