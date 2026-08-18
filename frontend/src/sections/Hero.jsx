@@ -66,7 +66,7 @@ export default function Hero() {
             aria-hidden="true"
           />
           <motion.img
-            src="/assets/portrait/gonzalo-hero.png"
+            src={`${import.meta.env.BASE_URL}assets/portrait/gonzalo-hero.png`}
             alt="Retrato ilustrado de Gonzalo Martí Peirats"
             className="hero__portrait"
             style={{ y: portraitY }}
