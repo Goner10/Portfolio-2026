@@ -41,7 +41,7 @@ export const translations = {
     projects: {
       eyebrow: 'Proyectos seleccionados',
       title: 'Trabajo real, en producción.',
-      intro: 'Cuatro proyectos para clientes reales: cada uno con su contexto, su problema y su solución.',
+      intro: 'Proyectos para clientes reales: cada uno con su contexto, su problema y su solución.',
       need: 'El encargo',
       solution: 'Lo que hice',
       stack: 'Stack',
